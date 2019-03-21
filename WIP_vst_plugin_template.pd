@@ -1,0 +1,30 @@
+#N canvas 571 172 718 300 10;
+#X obj 52 209 vstplugin~;
+#X obj 109 234 print;
+#X msg 76 57 open \$1;
+#X obj 76 11 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 76 32 openpanel;
+#X obj 89 86 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 89 106 openpanel;
+#X msg 89 130 open -e \$1;
+#X text 97 10 Pd GUI;
+#X text 108 86 VST GUI;
+#X msg 194 90 vis \$1;
+#X obj 194 70 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 244 90 show/hide editor;
+#X msg 15 150 close;
+#X msg 30 122 print;
+#X connect 0 2 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 10 0 0 0;
+#X connect 11 0 10 0;
+#X connect 13 0 0 0;
+#X connect 14 0 0 0;

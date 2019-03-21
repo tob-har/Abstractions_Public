@@ -16,7 +16,7 @@
 #X text 92 141 Set Number of voices with 1st argument;
 #X text 137 194 Split out to several MIDI Channels;
 #X text 301 252 Define MIDI Outputs here.;
-#X text 26 31 MIDI Note Dispatcher: Distribute Notes from one Input
+#X text 16 28 MIDI Note Dispatcher: Distribute Notes from one Input
 source to multiple outputs with different MIDI Channels;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
