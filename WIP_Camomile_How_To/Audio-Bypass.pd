@@ -1,0 +1,75 @@
+#N canvas 59 164 1126 535 10;
+#X obj 56 35 receive param;
+#X obj 56 66 route 1;
+#X obj 56 100 change -1e+37;
+#X obj 56 131 send bypass;
+#X text 152 35 Receive the parameters' values;
+#X text 152 61 Route the value of the fist parameter - bypass parameter
+, f 28;
+#X text 152 94 Filter the redundancies;
+#X text 152 127 Send the bypass state changes;
+#X obj 579 28 adc~ 1;
+#N canvas 0 23 605 300 Effect 1;
+#X obj 33 31 inlet~;
+#X obj 33 200 outlet~;
+#X obj 206 37 receive bypass;
+#X obj 33 101 delwrite~ \$0-ah 1000;
+#X obj 33 122 delread~ \$0-ah 1000;
+#X text 42 71 False dummy process;
+#X obj 206 58 t b f;
+#X obj 206 79 delay 22;
+#X obj 206 100 f, f 5;
+#X obj 206 121 block~;
+#X text 263 72 Wait for the ramp to finish, f 16;
+#X text 254 107 Switch the process on or off depending on the last
+bypass state, f 22;
+#X connect 0 0 3 0;
+#X connect 2 0 6 0;
+#X connect 4 0 1 0;
+#X connect 6 0 7 0;
+#X connect 6 1 8 1;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X restore 488 123 pd Effect;
+#X obj 659 114 delwrite~ \$0-makeup 1000;
+#X obj 659 135 delread~ \$0-makeup 1000;
+#X text 623 28 Input signal, f 13;
+#X text 388 111 An effect that implies 1000 ms of latency, f 15;
+#X text 818 109 Make up the delay implied by the effect when the plugin
+is bypassed, f 21;
+#X obj 503 217 receive bypass;
+#X text 363 260 Mute the signal when the plugin is bypassed \, otherwise
+unmute the signal, f 22;
+#X obj 503 238 swap 1;
+#X obj 503 259 -, f 6;
+#X obj 503 280 pack f 20;
+#X obj 488 325 *~;
+#X obj 503 301 line~;
+#X text 495 169 Apply a linear cross-fade between the wet and the dry
+signals to avoid crackles, f 30;
+#X obj 674 217 receive bypass;
+#X obj 674 280 pack f 20;
+#X obj 659 325 *~;
+#X obj 674 301 line~;
+#X text 744 260 Unmute the signal when the plugin is bypassed \, otherwise
+mute the signal, f 22;
+#X obj 570 411 dac~ 1;
+#X text 625 413 Output signal;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 8 0 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 20 0;
+#X connect 11 0 25 0;
+#X connect 15 0 17 0;
+#X connect 17 0 18 0;
+#X connect 17 1 18 1;
+#X connect 18 0 19 0;
+#X connect 19 0 21 0;
+#X connect 20 0 28 0;
+#X connect 21 0 20 1;
+#X connect 23 0 24 0;
+#X connect 24 0 26 0;
+#X connect 25 0 28 0;
+#X connect 26 0 25 1;

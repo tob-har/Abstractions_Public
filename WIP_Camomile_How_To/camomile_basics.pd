@@ -1,0 +1,37 @@
+#N canvas 915 37 595 716 10;
+#X obj 53 82 adc~ 1 2;
+#X obj 53 143 dac~ 1 2;
+#X text 51 46 Declaration of Audio Channels;
+#X obj 261 79 receive pd;
+#X obj 261 100 route dsp;
+#X obj 261 121 sel 1;
+#X obj 261 142 samplerate~;
+#X floatatom 261 163 5 0 0 0 - - -;
+#X text 259 45 Get Host-Samplerate on startup:;
+#N canvas 989 190 326 191 blocksize 0;
+#X obj 47 67 block~ 1;
+#X text 42 33 ... but can be reblocked in Subpachtes and Abstractions!
+;
+#X restore 421 75 pd blocksize;
+#X text 417 42 Blocksize in Main.pd is always 64 \, ...;
+#X text 49 194 Send DAW Latency to Camomile Plugin:;
+#X floatatom 53 227 5 0 0 0 - - -;
+#X msg 53 247 audio latency \$1;
+#X obj 53 268 send camomile;
+#X text 94 225 in Samples;
+#X obj 248 250 Audio-Bypass;
+#X text 247 217 Look in Here for Bypass and DSP off routine:;
+#X text 67 620 MIDI;
+#X text 65 647 everything is supportet \, exept for [midiin] [sysexin]
+[midirealteimin];
+#X text 66 677 [midiout] can be buggy!!!;
+#X text 57 319 PLAYHEAD;
+#X obj 55 335 PlayHead;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
