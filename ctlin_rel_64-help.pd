@@ -1,0 +1,37 @@
+#N canvas 724 299 797 505 10;
+#X obj 193 409 v v1;
+#X obj 18 390 expr if(v1 <=0 \, v1=0 \, v1) \; if(v1>=127 \, v1=127
+\, v1) \; v1=($i1-64)+v1;
+#X obj 18 433 change;
+#X obj 18 367 ctlin 16 1;
+#X obj 18 454 outlet;
+#X obj 19 192 expr if($i1 <=0 \, 0 \, if($i1 >= 127 \, 127 \, $i1))
+;
+#X obj 19 213 change;
+#X obj 19 130 ctlin 16 1;
+#X obj 19 234 outlet;
+#X obj 118 149 f;
+#X obj 19 170 expr ($i1-64)+$i2;
+#X text 91 129 --> set MIDI CC in here: MIDI channel 16 \, CC 1;
+#X text 65 213 --> change prevents from outputting 0 and 127 several
+times.;
+#X text 147 149 --> Feed initial value here \, left inlet.;
+#X text 226 410 --> Feed initial value here.;
+#X text 610 20 Tobias Hartmann 2019;
+#X text 16 14 MIDI Relative CC Controller Input;
+#X text 16 36 Optimized for Arturia Beatstep relative mode # 1 \, but
+works with other relative modes and controllers as well. (If necessary
+\, change center value 64) Outputs MIDI CC values from 0 - 127;
+#X text 17 298 Version 2 - using nonlocal shared variable;
+#X text 17 111 Version 1;
+#X text 17 312 Exchange v1 and choose a UNIQUE variable for every single
+instance!!!;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
+#X connect 5 0 6 0;
+#X connect 5 0 9 0;
+#X connect 6 0 8 0;
+#X connect 7 0 10 0;
+#X connect 9 0 10 1;
+#X connect 10 0 5 0;

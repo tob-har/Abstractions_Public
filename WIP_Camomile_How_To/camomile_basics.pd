@@ -1,4 +1,4 @@
-#N canvas 915 37 595 716 10;
+#N canvas 479 66 731 716 10;
 #X obj 53 82 adc~ 1 2;
 #X obj 53 143 dac~ 1 2;
 #X text 51 46 Declaration of Audio Channels;
@@ -12,8 +12,8 @@
 #X obj 47 67 block~ 1;
 #X text 42 33 ... but can be reblocked in Subpachtes and Abstractions!
 ;
-#X restore 421 75 pd blocksize;
-#X text 417 42 Blocksize in Main.pd is always 64 \, ...;
+#X restore 465 82 pd blocksize;
+#X text 461 49 Blocksize in Main.pd is always 64 \, ...;
 #X text 49 194 Send DAW Latency to Camomile Plugin:;
 #X floatatom 53 227 5 0 0 0 - - -;
 #X msg 53 247 audio latency \$1;
