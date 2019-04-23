@@ -1,0 +1,103 @@
+#N canvas 78 77 644 341 10;
+#X obj 381 196 mod 2;
+#X obj 337 218 div 2;
+#X obj 337 196 mod 4;
+#X obj 293 196 mod 8;
+#X obj 293 218 div 4;
+#X obj 242 196 mod 16;
+#X obj 242 218 div 8;
+#X obj 191 196 mod 32;
+#X obj 191 218 div 16;
+#X obj 140 196 mod 64;
+#X obj 140 218 div 32;
+#X obj 83 218 div 64;
+#X obj 83 196 mod 128;
+#X obj 26 218 div 128;
+#X obj 26 196 mod 256;
+#X obj 34 241 sel 1;
+#X obj 34 263 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 92 241 sel 1;
+#X obj 92 263 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 147 241 sel 1;
+#X obj 147 263 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 199 241 sel 1;
+#X obj 199 263 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 249 241 sel 1;
+#X obj 249 263 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 299 241 sel 1;
+#X obj 299 263 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 343 241 sel 1;
+#X obj 343 263 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 387 241 sel 1;
+#X obj 387 263 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 26 168 i;
+#X obj 26 117 inlet;
+#X floatatom 63 117 5 0 0 0 - - -;
+#X obj 26 147 abs;
+#X obj 26 282 outlet;
+#X obj 83 282 outlet;
+#X obj 140 283 outlet;
+#X obj 191 283 outlet;
+#X obj 242 283 outlet;
+#X obj 293 283 outlet;
+#X obj 337 283 outlet;
+#X obj 381 283 outlet;
+#X text 30 29 Converts absolute value of a whole number into binary
+digits. (8 Bit \, from 0 to 511) Expand if necessary by copying the
+structure and set [mod] value to the following power of 2;
+#X text 107 117 --> input;
+#X text 107 148 --> get absolute value;
+#X text 108 168 --> round to integer / whole number;
+#X text 434 262 --> bang to be outputted;
+#X text 434 283 --> outputs 0 or 1;
+#X text 496 20 Tobias Hartmann 2019;
+#X connect 0 0 29 0;
+#X connect 0 0 42 0;
+#X connect 1 0 27 0;
+#X connect 1 0 41 0;
+#X connect 2 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 3 0 4 0;
+#X connect 4 0 25 0;
+#X connect 4 0 40 0;
+#X connect 5 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 23 0;
+#X connect 6 0 39 0;
+#X connect 7 0 5 0;
+#X connect 7 0 8 0;
+#X connect 8 0 21 0;
+#X connect 8 0 38 0;
+#X connect 9 0 7 0;
+#X connect 9 0 10 0;
+#X connect 10 0 19 0;
+#X connect 10 0 37 0;
+#X connect 11 0 17 0;
+#X connect 11 0 36 0;
+#X connect 12 0 9 0;
+#X connect 12 0 11 0;
+#X connect 13 0 15 0;
+#X connect 13 0 35 0;
+#X connect 14 0 12 0;
+#X connect 14 0 13 0;
+#X connect 15 0 16 0;
+#X connect 17 0 18 0;
+#X connect 19 0 20 0;
+#X connect 21 0 22 0;
+#X connect 23 0 24 0;
+#X connect 25 0 26 0;
+#X connect 27 0 28 0;
+#X connect 29 0 30 0;
+#X connect 31 0 14 0;
+#X connect 32 0 34 0;
+#X connect 33 0 34 0;
+#X connect 34 0 31 0;

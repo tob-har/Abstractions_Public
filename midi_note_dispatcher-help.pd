@@ -1,0 +1,46 @@
+#N canvas 826 24 615 389 10;
+#X obj 20 87 notein;
+#X obj 20 115 pack f f;
+#X obj 20 140 poly 4;
+#X obj 20 172 pack f f f;
+#X obj 20 197 route 1 2 3 4;
+#X obj 20 251 noteout 1;
+#X obj 20 224 unpack f f;
+#X obj 90 224 unpack f f;
+#X obj 90 251 noteout 2;
+#X obj 162 223 unpack f f;
+#X obj 232 223 unpack f f;
+#X obj 162 250 noteout 3;
+#X obj 232 250 noteout 4;
+#X text 436 26 Tobias Hartmann 2019;
+#X text 14 12 MIDI Note Dispatcher;
+#X text 13 30 Distribute MIDI Notes from one input source / channel
+to multiple outputs with different MIDI Channels. Takes care of proper
+polyphonic note distribution!;
+#X text 81 86 --> Set MIDI Input here;
+#X text 82 140 --> Set Number of voices with 1st argument;
+#X text 115 194 --> Split out to several MIDI Channels;
+#X text 302 251 --> Define MIDI output-channels here.;
+#X text 20 308 Expand if necessary by increasing the [poly] argument
+accoring to the number of voices needed. Add more routing outputs \,
+incrementing by 1 (... 5 6 7 ...) Add more [unpack f f] and [noteoute].
+;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 3 1;
+#X connect 2 2 3 2;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 4 1 7 0;
+#X connect 4 2 9 0;
+#X connect 4 3 10 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 7 0 8 0;
+#X connect 7 1 8 1;
+#X connect 9 0 11 0;
+#X connect 9 1 11 1;
+#X connect 10 0 12 0;
+#X connect 10 1 12 1;

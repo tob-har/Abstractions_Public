@@ -1,4 +1,4 @@
-#N canvas 649 304 527 292 10;
+#N canvas 615 415 527 292 10;
 #X obj 228 40 polytouchin 1;
 #X obj 228 84 pack 0 0;
 #X obj 247 65 t b f;

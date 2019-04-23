@@ -1,0 +1,18 @@
+#N canvas 683 187 510 222 10;
+#X obj 35 28 ctlin;
+#X obj 35 49 expr if($i1<=64 \, $i1 \, $i1-128);
+#X obj 165 119 expr if($i1 <=0 \, 0 \, if($i1 >= 127 \, 127 \, $i1))
+;
+#X obj 165 140 change;
+#X obj 165 162 outlet;
+#X obj 234 77 f;
+#X obj 165 97 expr $i1+$i2;
+#X obj 234 28 inlet initial_value;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 1;
+#X connect 6 0 2 0;
+#X connect 7 0 5 0;

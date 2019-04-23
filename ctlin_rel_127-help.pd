@@ -1,0 +1,26 @@
+#N canvas 683 187 800 299 10;
+#X obj 20 96 ctlin;
+#X obj 20 117 expr if($i1<=64 \, $i1 \, $i1-128);
+#X obj 20 184 expr if($i1 <=0 \, 0 \, if($i1 >= 127 \, 127 \, $i1))
+;
+#X obj 20 205 change;
+#X obj 20 227 outlet;
+#X obj 89 142 f;
+#X obj 20 162 expr $i1+$i2;
+#X text 610 20 Tobias Hartmann 2019;
+#X text 16 14 MIDI Relative CC Controller Input;
+#X text 16 36 Optimized for Arturia Beatstep relative mode # 2 \, but
+works with other relative modes and controllers as well. Outputs MIDI
+CC values from 0 - 127;
+#X text 62 95 --> set MIDI CC in here.;
+#X text 119 142 --> Feed initial value here \, left inlet.;
+#X text 213 116 --> Calculates incrementing/decrementing value.;
+#X text 67 206 --> Prevents from outputting 0 and 127 several times.
+;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 5 0 6 1;
+#X connect 6 0 2 0;
