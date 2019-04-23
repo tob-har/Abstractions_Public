@@ -1,2 +1,7 @@
 # Pd_Abstractions_Public
-Pure Data Abstractions
+
+This is a growing collection of Pure Data Abstractions.
+
+For documentation see the wiki.
+
+
