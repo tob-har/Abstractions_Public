@@ -1,0 +1,86 @@
+#N canvas 528 50 702 753 10;
+#X obj 121 556 line~;
+#X obj 40 231 inlet~;
+#X obj 82 231 inlet~;
+#X obj 40 580 expr~ $v1*$v3 \; $v2*$v3;
+#X obj 40 612 outlet~;
+#X obj 121 612 outlet~;
+#X msg 121 483 set 0 \$1;
+#X msg 231 483 set 1 \$1;
+#X obj 132 231 inlet;
+#X obj 222 373 sel 0 1;
+#X obj 475 367 loadbang;
+#X msg 121 524 0 40;
+#X msg 231 524 1 40;
+#X obj 348 525 pack f f;
+#X msg 505 389 20;
+#X msg 475 389 40;
+#X msg 429 279 0.00787402;
+#X msg 404 279 1, f 2;
+#X obj 348 483 expr $f1 * $f2;
+#X obj 132 254 route set range;
+#X obj 404 254 sel 1 127;
+#X obj 272 373 sel 0 127;
+#X obj 222 348 spigot;
+#X obj 272 348 spigot;
+#X msg 258 299 1, f 1;
+#X msg 278 299 0, f 1;
+#X msg 298 299 0, f 1;
+#X msg 318 299 1, f 1;
+#X msg 416 138 set 200;
+#X msg 417 175 range 1;
+#X msg 477 175 range 127;
+#X text 517 692 Tobias Hartmann 2019;
+#X text 40 11 The Volume abstraction takes care of smooth vomule fades
+and mute/unmute without clicks. Works for mono or stereo audio rate
+signals (inlets 1 and 2). Third inlet changes volume and take floats
+as input. The rage is by default from 0 to 1 Sending 0 mutes the signal
+with a 40ms fade. Sending 1 unmutes the signal with a 40ms fade. Message
+"set" changes interpolation time between values. (default: 20ms). Message
+"range 1" sets range from 0 to 1 (Default). Message "range 127" sets
+range from 0 to 127;
+#X msg 404 227 1;
+#X connect 0 0 3 2;
+#X connect 1 0 3 0;
+#X connect 2 0 3 1;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 6 0 11 0;
+#X connect 7 0 12 0;
+#X connect 8 0 19 0;
+#X connect 9 0 11 0;
+#X connect 9 1 12 0;
+#X connect 9 2 18 0;
+#X connect 10 0 15 0;
+#X connect 10 0 14 0;
+#X connect 10 0 33 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X connect 13 0 0 0;
+#X connect 14 0 13 1;
+#X connect 15 0 7 0;
+#X connect 15 0 6 0;
+#X connect 16 0 18 1;
+#X connect 17 0 18 1;
+#X connect 18 0 13 0;
+#X connect 19 0 6 0;
+#X connect 19 0 7 0;
+#X connect 19 1 20 0;
+#X connect 19 2 22 0;
+#X connect 19 2 23 0;
+#X connect 20 0 17 0;
+#X connect 20 0 24 0;
+#X connect 20 0 25 0;
+#X connect 20 1 16 0;
+#X connect 20 1 26 0;
+#X connect 20 1 27 0;
+#X connect 21 0 11 0;
+#X connect 21 1 12 0;
+#X connect 21 2 18 0;
+#X connect 22 0 9 0;
+#X connect 23 0 21 0;
+#X connect 24 0 22 1;
+#X connect 25 0 23 1;
+#X connect 26 0 22 1;
+#X connect 27 0 23 1;
+#X connect 33 0 20 0;
